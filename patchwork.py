@@ -2,6 +2,8 @@
 from optparse import OptionParser
 import logging
 
+import state
+
 def main():
   usage = "usage: %prog [options]"
   parser = OptionParser(usage=usage)
@@ -15,7 +17,10 @@ def main():
 
   logger.info("Starting run")
 
-  # TODO Add the fun bits here.
+  game_state = state.State(state.Color.GREEN)
+  game_board = state.GameBoard()
+
+  game_state.dump()
 
   logger.info("Complete")
 
